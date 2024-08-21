@@ -1,14 +1,36 @@
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
             projects: [
-                { id: 1, name: "Project One", description: "Description for project one." },
-                { id: 2, name: "Project Two", description: "Description for project two." },
-                { id: 3, name: "Project Three", description: "Description for project three." },
+                // { id: 1, name: "Project One", description: "Description for project one." },
+                // { id: 2, name: "Project Two", description: "Description for project two." },
+                // { id: 3, name: "Project Three", description: "Description for project three." },
             ],
         };
-    }
+    },
+
+    methods: {
+        fetchProjects(){
+            axios.get("http://127.0.0.1:8000/api/projects", {
+                params: {
+
+                }
+            }).then((response) => {
+                console.log(response.data);
+    
+                this.projects = response.data.results.data;
+            }).catch((err) => {
+                console.error();
+            })
+        }
+    },
+
+    created() {
+        this.fetchProjects();
+    },
 };
 </script>
 
@@ -16,11 +38,10 @@ export default {
     <main>
         <div class="container mt-4">
             <div class="row">
-                <div 
-                    class="col-md-4" v-for="project in projects" :key="project.id">
+                <div class="col-md-4" v-for="project in projects" :key="project.id">
                     <div class="card project-card">
                         <div class="card-body">
-                            <h5 class="card-title">{{ project.name }}</h5>
+                            <h5 class="card-title">{{ project.title }}</h5>
                             <p class="card-text">{{ project.description }}</p>
                             <a href="#" class="btn btn-primary">Open Project</a>
                         </div>
