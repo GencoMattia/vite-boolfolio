@@ -32,32 +32,34 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+    @use "../assets/styles/partials/variables" as *;
+
     .project-card {
-        margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: $card-margin-bottom;
+        box-shadow: $card-box-shadow;
         transition: transform 0.3s ease-in-out;
 
         &:hover {
-            transform: translateY(-5px);
+            transform: $card-hover-transform;
         }
 
         .card-title {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: $card-title-font-size;
+            font-weight: $card-title-font-weight;
         }
 
         .card-text {
-            font-size: 0.9rem;
-            color: #6c757d;
+            font-size: $card-text-font-size;
+            color: $card-text-color;
         }
 
         .btn-primary {
-            background-color: #2ea44f;
-            border-color: #2ea44f;
+            background-color: $btn-primary-bg;
+            border-color: $btn-primary-border;
 
             &:hover {
-            background-color: #2c974b;
-            border-color: #298f46;
+            background-color: $btn-primary-hover-bg;
+            border-color: $btn-primary-hover-border;
             }
         }
     }
