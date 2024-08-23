@@ -2,7 +2,16 @@
 export default {
     data() {
         return {
-        
+            navLinkNames: [
+                {
+                    label: "Home",
+                    name: "home",
+                },
+                {
+                    label: "Projects",
+                    name: "projects-list",
+                },
+            ]
         };
     }
 };
@@ -12,9 +21,9 @@ export default {
     <header class="header">
         <div class="logo">MyGitHub</div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">About</a></li>
+            <li v-for="navItem in navLinkNames">
+                <RouterLink :to="{ name: navItem.name}">{{ navItem.label }}</RouterLink>
+            </li>
         </ul>
     </header>
 </template>

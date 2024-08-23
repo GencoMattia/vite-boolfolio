@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import PageHome from "./pages/PageHome.vue";
 import PageProjectsList from "./pages/PageProjectsList.vue";
+import Error404 from "./pages/errors/Error404.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -15,6 +16,11 @@ const router = createRouter({
             path: "/index",
             name: "projects-list",
             component: PageProjectsList
+        },
+        {
+            path: "/404",
+            name: "404-not-found",
+            component: Error404
         },
     ]
 });

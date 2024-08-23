@@ -26,7 +26,7 @@ export default {
                     <h1 class="display-3">Benvenuto su Project Manager</h1>
                     <p class="lead">Gestisci i tuoi progetti in modo semplice e intuitivo.</p>
                     <div class="mt-4">
-                        <!-- <router-link to="/projects" class="btn btn-main btn-lg">Esplora i Progetti</router-link> -->
+                        <router-link to="projects-list" class="btn btn-main btn-lg">Esplora i Progetti</router-link>
                     </div>
                 </div>
             </section>

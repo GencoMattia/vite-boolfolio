@@ -10,9 +10,7 @@ export default {
     data() {
         return {
             projects: [
-                // { id: 1, name: "Project One", description: "Description for project one." },
-                // { id: 2, name: "Project Two", description: "Description for project two." },
-                // { id: 3, name: "Project Three", description: "Description for project three." },
+
             ],
 
             currentPage: 1,
@@ -31,8 +29,13 @@ export default {
                 this.projects.push(...response.data.results.data);
                 this.currentPage = response.data.results.currentPage;
             }).catch((err) => {
+                this.$router.push({name: "404-not-found"});
                 console.error();
             })
+        },
+
+        changePage(routeName){
+            this.$router.push({name: routeName});
         }
     },
 
