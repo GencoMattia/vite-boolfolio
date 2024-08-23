@@ -28,9 +28,9 @@ export default {
     
                 this.projects.push(...response.data.results.data);
                 this.currentPage = response.data.results.currentPage;
-            }).catch((err) => {
+            }).catch((error) => {
                 this.$router.push({name: "404-not-found"});
-                console.error();
+                console.log(error);
             })
         },
 
