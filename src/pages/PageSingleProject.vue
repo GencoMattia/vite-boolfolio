@@ -38,24 +38,11 @@ export default {
     created() {
     this.fetchProject(this.$route.params.id);
     },
-
-    props: {
-        project: {
-            type: Object,
-            required: true,
-        }
-    }
 };
 </script>
 
 <template>
-    <div class="card project-card">
-        <div class="card-body">
-            <h5 class="card-title">{{ project.title }}</h5>
-            <p class="card-text">{{ project.description }}</p>
-            <a href="#" class="btn btn-primary">Open Project</a>
-        </div>
-    </div>
+    <SingleProjectCard :project="project"/>
 </template>
 
 <style scoped>
