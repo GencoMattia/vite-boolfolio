@@ -21,7 +21,7 @@ components: {
 <template>
 
 <AppHeader />
-<AppMain />
+<router-view></router-view>
 <AppFooter />
 
 </template>
