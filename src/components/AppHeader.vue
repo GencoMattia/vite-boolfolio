@@ -22,7 +22,7 @@ export default {
         <div class="logo">MyGitHub</div>
         <ul class="nav-links">
             <li v-for="navItem in navLinkNames">
-                <RouterLink :to="{ name: navItem.name}">{{ navItem.label }}</RouterLink>
+                <router-link :to="{ name: navItem.name}">{{ navItem.label }}</router-link>
             </li>
         </ul>
     </header>
