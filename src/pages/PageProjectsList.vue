@@ -51,7 +51,9 @@ export default {
     </h1>
     <div class="container mt-4">
         <div class="row">
-            <SingleProjectCard class="col-md-4" v-for="project in projects" :key="project.id" :project="project"/>
+            <router-link v-for="project in projects" :key="project.id" class="col-md-4" :to="{ name: 'single-project', params: { id: project.id }}">
+                <SingleProjectCard :project="project"/>
+            </router-link>
         </div>
 
         <div class="d-flex justify-content-center aling-items-center">

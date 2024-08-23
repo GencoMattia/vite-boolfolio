@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import PageHome from "./pages/PageHome.vue";
 import PageProjectsList from "./pages/PageProjectsList.vue";
 import Error404 from "./pages/errors/Error404.vue";
+import PageSingleProject from "./pages/PageSingleProject.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,6 +17,11 @@ const router = createRouter({
             path: "/index",
             name: "projects-list",
             component: PageProjectsList
+        },
+        {
+            path: "/index/:id",
+            name: "single-project",
+            component: PageSingleProject
         },
         {
             path: "/404",
